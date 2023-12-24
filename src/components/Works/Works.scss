@@ -1,0 +1,170 @@
+.section-works {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15em 0;
+
+    .works-container {
+        width: 1170px;
+
+        .title-group {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 5em 0;
+
+            .big-title {
+                color: #222222;
+                font-size: 8.25em;
+                font-weight: 700;
+                text-transform: uppercase;
+                z-index: 0;
+            }
+
+            .normal-title {
+                position: absolute;
+                color: #fff;
+                font-size: 2.25em;
+                font-weight: 600;
+                z-index: 2;
+
+                &::after {
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    margin: 0 0 0 -50px;
+                    border-bottom: 3px solid;
+                    border-image-slice: 1;
+                    border-image-source: linear-gradient(90deg, #4d5093 24%, #c98db0 64%, #db9b8f 100%);
+                    padding: 0.3em 0 0;
+                    width: 35%;
+                    content: '';
+                }
+            }
+        }
+
+        .works-list {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1170px;
+            gap: 3em;
+
+            .works-item {
+                position: relative;
+                width: 358px;
+                height: 320px;
+
+                .works-preview {
+                    background-size: cover;
+                    background-position: center 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 0.5em;
+                }
+
+                .works-item-details {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #000000d4;
+                    opacity: 0;
+                    transition: all 0.5s;
+                    z-index: 2;
+                    border-radius: 0.4em;
+
+                    .works-item-name {
+                        color: #fff;
+                        font-size: 1.2em;
+                        font-weight: 500;
+                        line-height: 1.5;
+                        text-align: center;
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    .works-item-details {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+
+            .works-item-lightbox {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 5;
+
+                .works-item-lightbox-overlay {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #000000c7;
+                    z-index: 0;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .works-item-lightbox-image {
+                    min-width: 25%;
+                    border-radius: .3em;
+                    transform: translateZ(1px);
+                    contain: inline-size;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .section-works {
+        padding: 10em 0;
+
+        .works-container {
+            width: 100%;
+            padding: 0 2em;
+
+            .title-group {
+                .big-title {
+                    font-size: 4em;
+                }
+        
+                .normal-title {
+                    font-size: 1.50em;
+                }
+            }
+
+            .works-list {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+
+                .works-item {
+                    width: 90%;
+                    height: 300px;
+                }
+
+                .works-item-lightbox {
+                    .works-item-lightbox-image {
+                        min-width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}

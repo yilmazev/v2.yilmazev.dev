@@ -1,0 +1,270 @@
+.section-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15em 0;
+
+    .about-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .title-group {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 5em 0;
+
+            .big-title {
+                color: #222222;
+                font-size: 8.25em;
+                font-weight: 700;
+                text-transform: uppercase;
+                z-index: 0;
+            }
+
+            .normal-title {
+                position: absolute;
+                color: #fff;
+                font-size: 2.25em;
+                font-weight: 600;
+                z-index: 2;
+
+                &::after {
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    margin: 0 0 0 -50px;
+                    border-bottom: 3px solid;
+                    border-image-slice: 1;
+                    border-image-source: linear-gradient(90deg, #4d5093 24%, #c98db0 64%, #db9b8f 100%);
+                    padding: 0.3em 0 0;
+                    width: 35%;
+                    content: '';
+                }
+            }
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: center;
+            gap: 5em;
+                
+            .about-me {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+
+                .about-column {
+                    position: relative;
+
+                    .about-mini-title {
+                        color: #fff;
+                        font-size: 2em;
+                        font-weight: 600;
+                        padding: 0 0 .3em 0;
+                    }
+
+                    .about-big-title {
+                        color: #fff;
+                        font-size: 3em;
+                        font-weight: 800;
+    
+                        .about-big-colorful-title {
+                            -webkit-text-fill-color: transparent;
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                            background-image: linear-gradient(90deg, #4d5093 24%, #c98db0 64%, #db9b8f 100%);
+                            color: transparent;
+                        }
+                    }
+
+                    .about-paragraph {
+                        color: #7a7a7a;
+                        line-height: 1.4;
+                        max-width: 700px;
+                    }
+
+                    .about-skills {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 2em;
+                        padding: 0px;
+                        margin: .3em 0 0;
+                        overflow: hidden;
+
+                        .about-skills-item {
+                            position: relative;
+                            color: #7a7a7a;
+                            font-size: 0.9em;
+                            font-family: "Roboto Mono";
+                            padding: 0 0 0 1em;
+                            margin: 0.2em 0;
+
+                            &::before {
+                                position: absolute;
+                                left: 0px;
+                                line-height: 12px;
+                                color: #4d5093;
+                                content: "▹";
+                            }
+                        }
+                    }
+
+                    .about-arrow-right-container {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .about-arrow-title {
+                            color: #fff;
+                            font-size: 1.2em;
+                            font-weight: 400;
+                            text-transform: uppercase;
+                            letter-spacing: 3px;
+                        }
+            
+                        .about-arrow-icon {
+                            width: 5.5em;
+                            fill: none;
+                            stroke: #fff;
+                            stroke-width: .03em;
+                            transition: 0.8s;
+                        }
+            
+                        .about-arrow-circle {
+                            position: absolute;
+                            right: -0.9em;
+                            bottom: 0.8em;
+                            width: 4em;
+                            height: 4em;
+                            background-color: transparent;
+                            border: 1px solid rgba(255, 255, 255, 0.431372549);
+                            border-radius: 50%;
+            
+                            &.active {
+                                display: none;
+                            }
+                        }
+            
+                        &:hover {
+                            cursor: pointer;
+            
+                            .about-arrow-icon {
+                                transform: translateX(2.3em);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .about-my-informations {
+                .about-my-informations-item {
+                    border-bottom: 1px solid #ffffff73;
+                    padding: 1em 0;
+
+                    .about-my-informations-item-text {
+                        color: #fff;
+                        font-size: 1.05em;
+                        font-weight: 400;
+                        
+                        .about-my-informations-item-text-bold {
+                            font-weight: 700;
+                        }
+
+                        .about-my-informations-item-text-link {
+                            color: #4d5093;
+                            font-weight: 500;
+                            transition: .5s;
+
+                            &:hover {
+                                filter: brightness(1.2);
+                            }
+
+                            &:active {
+                                filter: brightness(0.8);
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        border: 0;
+                    }
+                }
+            }
+        }
+
+        &.about-change-color {
+            background: #141414;
+        }
+
+        .about-default-color {
+            height: 100%;
+            width: 100%;
+            background: transparent;
+            z-index: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .section-about {
+        padding: 10em 0;
+
+        .about-container {
+            width: 100%;
+            padding: 0 2em;
+
+            .title-group {
+                .big-title {
+                    font-size: 4em;
+                }
+        
+                .normal-title {
+                    font-size: 1.50em;
+                }
+            }
+
+            .about-content {
+                flex-direction: column;
+                width: 100%;
+
+                .about-me {
+                    .about-column {
+                        .about-arrow-right-container {
+                            display: none;
+                        }
+
+                        .about-mini-title {
+                            font-size: 1.5em;
+                        }
+
+                        .about-big-title {
+                            font-size: 2.5em;
+                        }
+
+                        .about-paragraph {
+                            max-width: none;
+                        }
+
+                        .about-skills {
+                            flex-direction: column;
+                            gap: 1em;
+                        }
+                    }
+                }
+
+                .about-my-informations {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

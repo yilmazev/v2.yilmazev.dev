@@ -1,0 +1,30 @@
+#footer-mini {
+    width: 100%;
+
+    .footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 1.5em 0;
+
+        .footer-text-link {
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-image: linear-gradient(90deg, #4d5093 24%, #c98db0 64%, #db9b8f 100%);
+            font-size: 1em;
+            font-weight: 600;
+            transition: .5s;
+
+            &:hover {
+                filter: brightness(1.1);
+                cursor: pointer;
+            }
+
+            &:active {
+                filter: brightness(0.9);
+            }
+        }
+    }
+}

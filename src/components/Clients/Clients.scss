@@ -1,0 +1,162 @@
+.section-clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15em 0;
+
+    .clients-container {
+        width: 1170px;
+
+        .title-group {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 5em 0;
+
+            .big-title {
+                color: #222222;
+                font-size: 8.25em;
+                font-weight: 700;
+                text-transform: uppercase;
+                z-index: 0;
+            }
+
+            .normal-title {
+                position: absolute;
+                color: #958f8f;
+                font-size: 2.25em;
+                font-weight: 600;
+                z-index: 2;
+
+                &::after {
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    margin: 0 0 0 -50px;
+                    border-bottom: 3px solid;
+                    border-image-slice: 1;
+                    border-image-source: linear-gradient(90deg, #4d5093 24%, #c98db0 64%, #db9b8f 100%);
+                    padding: 0.3em 0 0;
+                    width: 35%;
+                    content: '';
+                }
+            }
+        }
+
+        .clients-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .clients-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .clients-column {
+                    .clients-item-avatar {
+                        width: 90px;
+                        height: 90px;
+                        border-radius: 50%;
+                        margin: 0 auto 15px;
+                        object-fit: cover;
+                    }
+
+                    .clients-item-text {
+                        color: #7a7a7a;
+                        font-size: 1em;
+                        font-weight: 400;
+                        line-height: 1.2;
+                        text-align: center;
+                        width: 900px;
+                    }
+
+                    .clients-item-name {
+                        color: #958f8f;
+                        font-size: 1.1em;
+                        font-weight: 600;
+                        margin: 30px 0 5px;
+                        text-align: center;
+                    }
+
+                    .clients-item-from {
+                        color: #958f8f;
+                        font-size: 0.9em;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                }
+
+                &:hover {
+                    cursor: -webkit-grab;
+                }
+
+                &:active {
+                    cursor: -webkit-grabbing;
+                }
+            }
+
+            .swiper-button-prev {
+                color: #db9b8f;
+            }
+
+            .swiper-button-next {
+                color: #db9b8f;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .section-clients {
+        padding: 10em 0;
+
+        .clients-container {
+            width: 100%;
+            padding: 0 2em;
+
+            .title-group {
+                .big-title {
+                    font-size: 4em;
+                }
+        
+                .normal-title {
+                    font-size: 1.50em;
+                }
+            }
+
+            .clients-list {
+                .clients-item {
+                    .clients-column {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        .clients-item-avatar {
+                            width: 90px;
+                            border-radius: 50%;
+                            margin: 0 auto 15px;
+                            object-fit: cover;
+                        }
+    
+                        .clients-item-text {
+                            font-size: 1em;
+                            width: 80%;
+                        }
+    
+                        .clients-item-name {
+                            font-size: 1.1em;
+                        }
+    
+                        .clients-item-from {
+                            font-size: 0.9em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
